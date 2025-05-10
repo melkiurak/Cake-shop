@@ -1,22 +1,25 @@
-@import url(https://fonts.googleapis.com/css?family=Yesteryear:regular);
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One:regular);
 @import "tailwindcss";
 @font-face {
-    font-family: VerdanaCustom;
-    font-style: normal;
-    font-weight: normal;
-    src: url('/assets/font/Verdana_Regular.woff') format('woff');
-    font-display: swap;
+  font-family: VerdanaCustom;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Verdana_Regular.woff") format("woff");
+  font-display: swap;
 }
+
 @font-face {
-    font-family: 'Verdana';
-    font-style: normal;
-    font-weight: normal;
-    src: url('/assets/font/Verdana_Bold.woff') format('woff');
-    font-display: swap;
+  font-family: VerdanaCustomBold;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Verdana_Bold.woff") format("woff");
+  font-display: swap;
 }
-@theme{
-    --font-yesteryear: "Yesteryear", sans-serif,
-    --font-verdanaregular: "VerdanaCustom", sans-serif,
+
+@theme {
+  --font-yesevaOne: "Yeseva One", sans-serif;
+  --font-verdana: "VerdanaCustom", sans-serif;
+  --font-verdana-bold: "VerdanaCustomBold", sans-serif;
 }
 .container{
     width: 1487px;
@@ -24,5 +27,5 @@
     margin: 0 auto;
 }
 h2{
-    @apply text-[35px] text-[#011936];
+    @apply text-[35px] text-[#011936] font-yesevaOne;
 }
