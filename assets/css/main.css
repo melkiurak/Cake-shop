@@ -1,19 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Yesteryear:regular);
 @import "tailwindcss";
+@font-face {
+    font-family: VerdanaCustom;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/font/Verdana_Regular.woff') format('woff');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/font/Verdana_Bold.woff') format('woff');
+    font-display: swap;
+}
 @theme{
-    --font-yesteryear: "Yesteryear", sans-serif; 
+    --font-yesteryear: "Yesteryear", sans-serif,
+    --font-verdanaregular: "VerdanaCustom", sans-serif,
 }
-@font-face {
-  font-family: 'VerdanaCustom';
-  font-style: normal;
-  font-weight: normal;
-  src: url('/assets/font/Verdana_Regular.woff') format('woff');
-  font-display: swap;
+.container{
+    width: 1487px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
-@font-face {
-  font-family: 'VerdanaCustom';
-  font-style: normal;
-  font-weight: normal;
-  src: url('/assets/font/Verdana_Bold.woff') format('woff');
-  font-display: swap;
+h2{
+    @apply text-[35px] text-[#011936];
 }
