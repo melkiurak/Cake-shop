@@ -21,6 +21,7 @@
     "@tailwindcss/vite": "^4.1.6",
     "@vue/apollo-composable": "^4.2.2",
     "eslint": "^9.26.0",
+    "firebase": "^11.7.1",
     "graphql": "^16.11.0",
     "graphql-tag": "^2.12.6",
     "nuxt": "^3.17.2",

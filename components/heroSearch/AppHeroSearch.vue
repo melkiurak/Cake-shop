@@ -1,6 +1,10 @@
 <script setup lang="ts">
     import { IcNavArrowDown } from '@kalimahapps/vue-icons';
+    import { getCategorys } from '~/server/getData';
+    import type { CatagorysCandy } from '~/types/candy';
     const FilterBtn = ['На день народження', 'З фруктами', 'Патріотичні', 'Для чоловіків', 'Для весілля', 'Без глютену', 'Веганські', 'Без цукру ',' Для дівчат', 'З квітами', 'Класичні рецепти'] 
+    const { data: categories } = await useAsyncData<CatagorysCandy[]>('category', getCategorys);
+
 </script>
 <template>
    <div class="flex gap-[80px]">
@@ -22,6 +26,12 @@
                     <span class="font-verdana">Other options</span>
                     <IcNavArrowDown/>
                 </button>
+            </div>
+         </div>
+         <div class="flex justify-between ">
+            <div v-for="category in categories" :key="category.id" class="flex flex-col items-center">
+                <img :src="category.img" alt="">
+               <h5>{{ category.name }}</h5>
             </div>
          </div>
      </div>
