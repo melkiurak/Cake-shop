@@ -20,5 +20,6 @@ export default defineNuxtConfig({
   ],
    alias: {
     '@components': fileURLToPath(new URL('./components', import.meta.url)),
+    '@img': fileURLToPath(new URL('./public/img', import.meta.url)),
   }
 })

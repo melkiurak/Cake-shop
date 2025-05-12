@@ -22,10 +22,8 @@
   --font-verdana-bold: "VerdanaCustomBold", sans-serif;
 }
 .container{
-    width: 1487px;
-    padding: 0 15px;
-    margin: 0 auto;
+  @apply px-[15px] m-auto w-full max-w-[1478px];
 }
 h2{
-    @apply text-[35px] text-[#011936] font-yesevaOne;
+  @apply text-[35px] text-[#011936] font-yesevaOne;
 }
