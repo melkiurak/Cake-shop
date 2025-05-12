@@ -27,3 +27,6 @@
 h2{
   @apply text-[35px] text-[#011936] font-yesevaOne;
 }
+button{
+  cursor: pointer;
+}
