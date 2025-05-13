@@ -1,13 +1,14 @@
 <script setup lang="ts">
     import { IcNavArrowDown, IcNavArrowLeft, IcNavArrowRight } from '@kalimahapps/vue-icons';
-    import { getCategorys } from '~/server/getData';
-    import type { CatagorysCandy } from '~/types/candy';
+    import { getCategorys, getProducts } from '~/server/getData';
+    import type { CatagorysCandy, Products } from '~/types/candy';
     
     const slides = ref(5);
     const startIndex = ref(0);
    
     const FilterBtn = ['На день народження', 'З фруктами', 'Патріотичні', 'Для чоловіків', 'Для весілля', 'Без глютену', 'Веганські', 'Без цукру ',' Для дівчат', 'З квітами', 'Класичні рецепти'] 
     const { data: categories } = await useAsyncData<CatagorysCandy[]>('category', getCategorys);
+    const { data: products } = await useAsyncData<Products[]>('product', getProducts);
 
     const visibleCategorys = computed(() => 
         categories.value?.slice(startIndex.value, startIndex.value + slides.value)
