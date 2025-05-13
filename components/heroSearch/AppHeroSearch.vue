@@ -25,6 +25,10 @@
             startIndex.value--
         }
     }
+    const handelProductCategorys = (category: CatagorysCandy) => {
+        const filterdProduct = products.value?.filter((product) => product.categoryId === category.id)
+        console.log('Это днанные', filterdProduct)
+    }
 </script>
 <template>
    <div class="flex gap-[80px]">
@@ -59,7 +63,7 @@
             </div>
             <div class="flex justify-between ">
                 <div v-for="category in visibleCategorys" :key="category.id" class="flex flex-col items-center">
-                    <img :src="category.img" alt="">
+                    <img :src="category.img" alt="" @click="handelProductCategorys(category)">
                     <h5 class="font-verdana-bold text-lg text-[#43607C]">{{ category.name }}</h5>
                 </div>
             </div>

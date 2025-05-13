@@ -11,9 +11,9 @@
             <div class="max-lg:hidden">
                 <nav>
                     <ul class="flex items-center gap-[30px] text-[#011936] font-verdana">
-                        <li><a href="">Desserts</a></li>
-                        <li><a href="">Best confectioners</a></li>
-                        <li><a href="">Useful articles</a></li>
+                        <li><NuxtLink to="/desserts" >Desserts</NuxtLink ></li>
+                        <li><NuxtLink >Best confectioners</NuxtLink ></li>
+                        <li><NuxtLink >Useful articles</NuxtLink ></li>
                     </ul>
                 </nav>
             </div>
