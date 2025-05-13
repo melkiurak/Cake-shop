@@ -2,10 +2,28 @@
     import { IcNavArrowDown, IcNavArrowLeft, IcNavArrowRight } from '@kalimahapps/vue-icons';
     import { getCategorys } from '~/server/getData';
     import type { CatagorysCandy } from '~/types/candy';
-
+    
+    const slides = ref(5);
+    const startIndex = ref(0);
+   
     const FilterBtn = ['На день народження', 'З фруктами', 'Патріотичні', 'Для чоловіків', 'Для весілля', 'Без глютену', 'Веганські', 'Без цукру ',' Для дівчат', 'З квітами', 'Класичні рецепти'] 
     const { data: categories } = await useAsyncData<CatagorysCandy[]>('category', getCategorys);
 
+    const visibleCategorys = computed(() => 
+        categories.value?.slice(startIndex.value, startIndex.value + slides.value)
+    )
+   
+    const handleSlideNext = () => {
+        if(!categories.value) return
+        if (startIndex.value + slides.value < categories.value.length) {
+            startIndex.value++
+        }
+    }
+    const handleSlidePrev = () => {
+        if(startIndex.value >0){
+            startIndex.value--
+        }
+    }
 </script>
 <template>
    <div class="flex gap-[80px]">
@@ -31,15 +49,15 @@
         </div>
         <div class="flex flex-col gap-[15px]">
             <div class="flex justify-end">
-                <button>
+                <button @click="handleSlidePrev">
                     <IcNavArrowLeft/>
                 </button>
-                <button>
-                    <IcNavArrowRight/>
+                <button @click="handleSlideNext">
+                    <IcNavArrowRight />
                 </button>
             </div>
             <div class="flex justify-between ">
-                <div v-for="category in categories" :key="category.id" class="flex flex-col items-center">
+                <div v-for="category in visibleCategorys" :key="category.id" class="flex flex-col items-center">
                     <img :src="category.img" alt="">
                     <h5 class="font-verdana-bold text-lg text-[#43607C]">{{ category.name }}</h5>
                 </div>
