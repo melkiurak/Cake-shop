@@ -21,12 +21,15 @@
   --font-verdana: "VerdanaCustom", sans-serif;
   --font-verdana-bold: "VerdanaCustomBold", sans-serif;
 }
-.container{
+.container {
   @apply px-[15px] m-auto w-full max-w-[1478px];
 }
-h2{
+h2 {
   @apply text-[35px] text-[#011936] font-yesevaOne;
 }
-button{
+button {
   cursor: pointer;
+}
+.router-link-exact-active {
+  @apply font-verdana-bold;
 }
